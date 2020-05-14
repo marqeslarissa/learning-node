@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+      <h1> Listing of Courses </h1>
+      <table>
+        <tr>
+          <td>ID</td>
+          <td>Title</td>
+        </tr>
+        <tr for(course in data.courses)>
+          <td>$(course.id)</td>
+          <td>$(course.title)</td>
+        </tr>
+      </table> 
+    </body> 
+</html>
