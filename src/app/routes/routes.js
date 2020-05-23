@@ -12,22 +12,12 @@ module.exports = (app) => {
     `);
   });
   app.get('/courses', function (req, resp) {
+    db.all('SELECT * FROM courses', function(error, results) {
     resp.marko(
       require('../views/course/listing/listing.marko'),
       {
-        courses: [
-          {
-            id: 1,
-            title: 'Node.js'
-          },
-          {
-            id: 2,
-            title: 'MongoDB'
-          }
-        ]
+        courses: results
       }
     );
   });
 };
-
-
